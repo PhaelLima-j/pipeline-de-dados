@@ -3,6 +3,8 @@ Este projeto consiste em um Dashboard interativo criado com Streamlit, PostgreSQ
 
 ## 🔍 Funcionalidades
 📈 Média de temperatura por tipo (In/Out)
+![image](https://github.com/user-attachments/assets/288d48ed-b8a3-496d-b46a-fcf3ddfccf1a)
+
 
 🏢 Última medição registrada por sala
 
