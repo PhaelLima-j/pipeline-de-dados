@@ -7,8 +7,12 @@ Este projeto consiste em um Dashboard interativo criado com Streamlit, PostgreSQ
 
 
 🏢 Última medição registrada por sala
+![image](https://github.com/user-attachments/assets/bd80217f-c32d-4134-95ec-b83369ffadd1)
+
 
 📊 Contagem de registros por data e tipo
+![image](https://github.com/user-attachments/assets/465ead7c-1b8d-4f54-90a4-361485c66193)
+
 
 ## 🗄 Estrutura do Banco de Dados
 A base de dados contém a tabela temperature_reading, com as seguintes colunas:
