@@ -25,8 +25,10 @@ def load_data(view_name):
         st.error(f"Erro ao carregar dados da view {view_name}: {e}")
         return pd.DataFrame()  
 
+#Título do dashboard
 st.title('Dashboard de Temperatura IoT')
 
+# Primeiro gráfico
 st.header('Média de Temperatura por Tipo (In/Out)')
 df_avg_temp = load_data('avg_temp_by_type')
 
@@ -36,6 +38,7 @@ if not df_avg_temp.empty:
 else:
     st.warning("Nenhum dado disponível.")
 
+# Segundo gráfico
 st.header('Última Medição por Sala')
 df_last_temp = load_data('last_temp_by_room')
 
@@ -44,6 +47,8 @@ if not df_last_temp.empty:
     st.plotly_chart(fig2)
 else:
     st.warning("Nenhum dado disponível.")
+    
+# Terceiro gráfico
 
 st.header('Contagem de Registros por Data e Tipo')
 df_count_logs = load_data('count_logs_by_date')
