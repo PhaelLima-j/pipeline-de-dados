@@ -1,14 +1,20 @@
 #import das minhas libs
+import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 from sqlalchemy import create_engine
+from dotenv import load_dotenv
+
+#Carregando variávies
+load_dotenv()
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 #Leitura do meu arquivo csv
 df = pd.read_csv('IOT-TEMP.csv', sep=',')
 
 #engine para me conectar ao banco que está no meu docker
-engine = create_engine('postgresql://postgres:RaphaelLim4@localhost:5432/postgres-iot')
+engine = create_engine(DATABASE_URL)
 
 #Inserindo o meu csv dentro do meu banco
 df.to_sql("temperature_reading", con=engine, if_exists='replace', index=False)
@@ -47,7 +53,7 @@ if not df_last_temp.empty:
     st.plotly_chart(fig2)
 else:
     st.warning("Nenhum dado disponível.")
-    
+
 # Terceiro gráfico
 
 st.header('Contagem de Registros por Data e Tipo')
